@@ -1,4 +1,7 @@
 
+using DockerizedWebAPI.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DockerizedWebAPI
 {
     public class Program
@@ -8,6 +11,9 @@ namespace DockerizedWebAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<OnlineShopDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
