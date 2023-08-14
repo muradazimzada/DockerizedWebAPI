@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace DockerizedWebAPI.Data
 {
-   
-public class OnlineShopDbContext : DbContext
+    public class OnlineShopDbContext : DbContext
     {
         public OnlineShopDbContext(DbContextOptions<OnlineShopDbContext> options)
         : base(options)
